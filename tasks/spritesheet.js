@@ -105,7 +105,7 @@ module.exports = function(grunt) {
 					Object.getOwnPropertyNames(coordinates).forEach(function(file) {
 						var name = path.basename(file, ext);
 
-						if(options.prefixFileName)
+						if(options.prefixFilename)
 							name = prefix + "-" + name;
 
 						file = coordinates[file];
