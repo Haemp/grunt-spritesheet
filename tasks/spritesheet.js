@@ -89,7 +89,8 @@ module.exports = function(grunt) {
 			var options = _.extend({
 					'exportOpts': {
 						'format': ext.slice(1)
-					}
+					},
+					'prefixFilename': true
 				}, spritesmithOptions);
 
 			// if there are standard res imgs, create sprite
@@ -103,7 +104,9 @@ module.exports = function(grunt) {
 
 					Object.getOwnPropertyNames(coordinates).forEach(function(file) {
 						var name = path.basename(file, ext);
-						name = prefix + "-" + name;
+
+						if(options.prefixFileName)
+							name = prefix + "-" + name;
 
 						file = coordinates[file];
 
